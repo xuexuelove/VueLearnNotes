@@ -48,6 +48,7 @@ module.exports = {
         //排除node模块的js和bower的js
         exclude: /(node_modules|bower_components)/,
         use: {
+          // npm install --save-dev babel-loader@7 babel-core babel-preset-es2015 
           loader: 'babel-loader',
           options: {
             //如果要使用@babel/preset-env这里需要在根目录新建一个babel的文件
@@ -58,6 +59,7 @@ module.exports = {
         }
       },
       {
+        //install --save-dev vue-loader vue-template-compiler
         test: /\.vue$/,//正则匹配.vue文件
         use: {
           loader: 'vue-loader'
