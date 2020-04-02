@@ -3,8 +3,10 @@ const path = require('path')
 //获取webpack
 const webpack = require('webpack')
 //获取htmlWebpackPlugin对象
+//npm install html-webpack-plugin --save-dev
 const htmlWbepackPlugin = require('html-webpack-plugin')
 //获取uglifyjs-webpack-plugin对象
+//npm install uglifyjs-webpack-plugin@1.1.1 --save-dev
 const uglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin')
 
 //2.配置webpack的入口和出口
@@ -80,9 +82,11 @@ module.exports = {
   },
   plugins:[
     new webpack.BannerPlugin('最终解释权归zz所有'),
+    //npm install html-webpack-plugin --save-dev 第三方插件
     new htmlWbepackPlugin({
       template: 'index.html'
     }),
+    //npm install uglifyjs-webpack-plugin@1.1.1 --save-dev
     new uglifyjsWebpackPlugin()
   ]
 
