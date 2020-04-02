@@ -4,6 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
 
+
+// 外部添加routes
 let routes = [
   {
     path: '/',
