@@ -4,12 +4,13 @@ import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
 
+let routes = [
+  {
+    path: '/',
+    name: 'HelloWorld',
+    component: HelloWorld
+  }
+]
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
+  routes
 })
