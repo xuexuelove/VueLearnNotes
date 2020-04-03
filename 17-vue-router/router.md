@@ -16,3 +16,11 @@
 - 使用路由：通过<router-link> 和<router-view>
 
   
+
+### router-link的 属性
+
+> - to 属性: 配置的路由路径
+> - tag : 可以指定<router-link>之后渲染程什么组件，比如渲染程<li> 而不是默认的<a>
+> - replace不会保留history记录 指定replace 后退键不能返回上一个页面
+> - active-class 选中class属性  一般不进行修改
+
