@@ -15,7 +15,11 @@
     <router-link :to="'/user/'+userName">用户</router-link>
     <!-- query 传递参数的方式 -->
     <router-link :to="{path:'/profile',query:{id:123,name:'zhangsan'}}">档案</router-link>
-    <router-view />
+   <!-- 缓存组件 -->
+    <!--include exclude 字符串和正则表达式  -->
+    <keep-alive include="" exclude="profile">
+      <router-view />
+    </keep-alive>
   </div>
 </template>
 
