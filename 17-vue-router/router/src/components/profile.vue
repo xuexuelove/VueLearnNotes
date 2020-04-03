@@ -1,17 +1,17 @@
 <!--  -->
 <template>
   <div>
-    <h2>我是主页哈哈哈---</h2>
-    <h4>这里是主页</h4>
-    <router-link to="/home/news">新闻</router-link>
-    <router-link to="/home/message">消息</router-link>
-    <router-view></router-view>
+    <h2>这是我的profile</h2>
+    <!-- route的query对象传递函数 -->
+    <h4>{{$route.query.id}}</h4>
+    <h4>{{$route.query.name}}</h4>
+    <h4>{{$route.query}}</h4>
   </div>
 </template>
 
 <script>
 export default {
-  name: "home",
+  name : 'profile',
   data() {
     return {};
   },

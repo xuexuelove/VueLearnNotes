@@ -8,20 +8,23 @@ import Router from 'vue-router'
 // import user from '@/components/user'
 
 // 路由懒加载方式
-const HelloWorld =()=>import('@/components/HelloWorld')
-const home =()=>import('@/components/home')
-const about =()=>import('@/components/about')
-const user =()=>import('@/components/user')
+const HelloWorld = () => import('@/components/HelloWorld')
+const home = () => import('@/components/home')
+const homeNews = () => import('@/components/homeNews')
+const homeMessage = () => import('@/components/homeMessage')
+const about = () => import('@/components/about')
+const user = () => import('@/components/user')
+const Profile = () => import('@/components/profile')
 
 Vue.use(Router)
 
 
 // 外部添加routes
-let routes = [ 
+let routes = [
   {
     path: '/',
     //重定向
-    redirect:'/home'
+    redirect: '/home'
   },
   {
     path: '/hellword',
@@ -31,7 +34,24 @@ let routes = [
   {
     path: '/home',
     name: 'home',
-    component: home
+    component: home,
+    // 嵌套路由。。
+    children: [
+      {
+        path: '',
+        redirect: 'news'
+      },
+      {
+        path: 'news',
+        name: 'news',
+        component: homeNews,
+      },
+      {
+        path: 'message',
+        name: 'message',
+        component: homeMessage,
+      }
+    ]
   },
   {
     path: '/about',
@@ -44,13 +64,35 @@ let routes = [
     path: '/user/:userName',
     name: 'user',
     component: user
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: Profile
   }
 ]
 
-export default new Router({
+const router = new Router({
   routes,
   // router模式：hash 和 history 默认是hash
-   mode:'history',
-   //统一选中的clss名字
-  //  linkActiveClass:'myActiveClassName'
+  mode: 'history',
+  //统一选中的clss名字
+  //  linkActiveClass:'myActiveClassName',
+  // beforeEach((to,from,next)=>{
+
+  // })
 })
+
+//前置守卫（导航守卫）----全局守卫
+router.beforeEach((to, from, next) => {
+  console.log("+=+++++++");
+  next()
+})
+
+//后置钩子（）----全局守卫
+router.afterEach((to, from) => {
+  console.log('-----------------');
+  
+})
+
+export default router
