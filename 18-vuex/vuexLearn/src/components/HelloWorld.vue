@@ -1,7 +1,11 @@
 <template>
   <div>
-    <h3>{{msg}}</h3>
+    <!-- <h3>{{msg}}</h3> -->
     <h4>{{$store.state.counter}}</h4>
+     <h2>hello里面的相关getters内容</h2>
+    <h4>{{$store.getters.powerCounter}}</h4>
+    <h4>{{$store.getters.lg20Stu}}</h4>
+    <h4>{{$store.getters.lgAgeStu(12)}}</h4>
   </div>
  
 </template>

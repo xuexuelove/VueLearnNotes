@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>数组的响应式方法 </title>
 </head>
+
 <body>
   <div id="app">
     <!-- 数组的响应式方法 -->
@@ -20,12 +22,12 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script>
     const app = new Vue({
-      el:"#app",
-      data:{
-        letters:['a','b','c','d','e']
+      el: "#app",
+      data: {
+        letters: ['a', 'b', 'c', 'd', 'e']
       },
       methods: {
-        btn1(){
+        btn1() {
           //1.push
           this.letters.push('f')
           //2.pop()删除最后一个元素
@@ -44,12 +46,20 @@
           //7.reverse()反转
           // this.letters.reverse()
 
+          //添加数据的响应式方法
+          this.letters.splice(0, 1, 'bbbb')
+          // vue 提供的set方法 set（要修改的对象，索引值，修改后的值）
+          Vue.set(this.letters, 0, 'bbbbb')
+          // delete(object: object, key: string | number): void; 删除对象[]属性的响应式操作
+          // Vue.delete()
+          
         },
-        btn2(){
-          this.letters[0]='f'
+        btn2() {
+          this.letters[0] = 'f'
         }
       }
     })
   </script>
 </body>
+
 </html>
