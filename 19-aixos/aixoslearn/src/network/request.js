@@ -7,7 +7,7 @@
 import axios from 'axios'
 
 
-
+//分支测试
 /**
  * 
  * 利用 axios的实例是 AxiosPromise 原型
@@ -36,7 +36,7 @@ export function requestByAxios(config) {
     // 对响应错误做点什么
     return Promise.reject(error);
   });
-  
+
   return instance(config)
 }
 
