@@ -13,7 +13,7 @@ const moduleA = {
     }
   },
   getters: {
-    fullName(state) {
+    fullName(state) { 
       return state.name + '1111'
     },
     //gettes 为本模块的getters
