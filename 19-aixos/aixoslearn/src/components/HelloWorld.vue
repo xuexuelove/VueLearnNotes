@@ -9,15 +9,22 @@
     <h3>将网络请求进行封装方便后期维护</h3>
     <button @click="btRequest">封装网络请求的调用回调函数request1</button>
     <br />
-    <button @click="btRequest2">封装网络请求的调用对象回调函数request2</button><br>
-    <button @click="byPromisRequst">封装网络请求的bypromise</button><br>
+    <button @click="btRequest2">封装网络请求的调用对象回调函数request2</button>
+    <br />
+    <button @click="byPromisRequst">封装网络请求的bypromise</button>
+    <br />
     <button @click="byInstancePromise">封装网络请求的axios实例的原型</button>
     <h2>Essential Links</h2>
   </div>
 </template>
 
 <script>
-import { request1, request2,requestByPromise,requestByAxios} from "@/network/request";
+import {
+  request1,
+  request2,
+  requestByPromise,
+  requestByAxios
+} from "@/network/request";
 export default {
   name: "HelloWorld",
   data() {
@@ -108,7 +115,7 @@ export default {
         }
       );
     },
-      // request2封装网络请求的调用
+    // request2封装网络请求的调用
     btRequest2() {
       request2({
         baseConfig: {
@@ -117,38 +124,38 @@ export default {
         success: res => {
           console.log("请求成功,数据\t" + res.data);
           console.log(res.data);
-          
         },
         error: msg => {
           console.log("请求失败,失败信息" + msg);
         }
       });
     },
-    byPromisRequst(){
-       requestByPromise({
-         url:'/ip'
-       }).then((res)=>{
-         console.log('请求成功');
-         console.log(res.data);
-         
-       }).catch(error=>{
-         console.log('请求失败');
-         console.log(error);
-         
-         
-       })
+    byPromisRequst() {
+      requestByPromise({
+        url: "/ip"
+      })
+        .then(res => {
+          console.log("请求成功");
+          console.log(res.data);
+        })
+        .catch(error => {
+          console.log("请求失败");
+          console.log(error);
+        });
     },
 
-    byInstancePromise(){
-        requestByAxios({
-          url:'/ip'
-        }).then(res=>{
-          console.log('请求成功');
+    byInstancePromise() {
+      requestByAxios({
+        url: "/ip"
+      })
+        .then(res => {
+          console.log("请求成功");
           console.log(res.data);
-        }).catch(error=>{
-          console.log('请求失败');
-          console.log(error);     
         })
+        .catch(error => {
+          console.log("请求失败");
+          console.log(error);
+        });
     }
   }
 };

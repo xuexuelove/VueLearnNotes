@@ -2,6 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h3><a href="http://www.axios-js.com/zh-cn/docs/" target="_blank">axios中文学习文档</a></h3>
+    <h3><a href="https://httpbin.org/" target="_blank">测试接口的网站httpbin</a></h3>
     <router-link to='/home'>首页</router-link>
     <router-view/>
   </div>
