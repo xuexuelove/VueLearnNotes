@@ -432,7 +432,16 @@ vue-cli3配置被隐藏起来了，可以在`node_modules`文件夹中找到`@vu
 ```javascript
 //在module.exports中修改配置
 module.exports = {
-  
+   configureWebpack: {
+    resolve: {
+      alias: {
+        'assets': '@/assets',
+        'common': '@/common',
+        'components': '@/components',
+        'network': '@/network'
+      }
+    }
+  }
 }
 ```
 
